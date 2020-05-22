@@ -2,4 +2,8 @@
 set -e
 
 echo "Building..."
+if [ "$CODEFRESH" == "true" ]; then
+    echo "Secret build"
+    cp /app/clients/php/vendor/ .
+fi
 time composer install --dev
