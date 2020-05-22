@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -e
 
-apt update && apt install php-curl -y
-
 echo "Building..."
 time composer install --dev
