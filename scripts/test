@@ -3,8 +3,9 @@ set -e
 
 CODEFRESH=${CI:-false}
 
-echo "CODEFRESH: $CODEFRESH"
+echo "Testing..."
 if [ "$CODEFRESH" == "false" ]; then
+    echo "Dump Autoload"
     composer dump-autoload
 fi
 
