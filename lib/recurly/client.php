@@ -123,6 +123,12 @@ class Recurly_Client
    */
   public static function disableXmlEntityLoading()
   {
+    // php >= 8.0 has `libxml_disable_entity_loader` deprecated, 
+    //            prevent deprecation messages
+    if (PHP_VERSION_ID >= 80000) {
+      return;
+    }
+    
     $disable = getenv('RECURLY_DISABLE_ENTITY_LOADING');
     if ($disable === false) {
         $disable = true;
